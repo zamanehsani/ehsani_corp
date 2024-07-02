@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ehsani Corporation</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <meta name="author" content="Zaman Ehsani" />
+    <meta
+      name="description"
+      content="Ehsani Corporation is a privately registered firm in Dubai UAE. " />
+
+    <!-- social media tags -->
+    <meta property="og:title" content="EhsaniCorp." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ehsanicorp.com" />
+    <meta property="og:image" content="/img/EhsaniCorp_logo_black.svg" />
+    <meta
+      property="og:description"
+      content="Ehsani Corporation LLC FZ is private firm operating on few induestries such as Software consulting, ecommerce, restuarant, food and cosmetic." />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="EhsaniCorp." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-screen bg-slate-400">
+    <main
+      class="min-h-screen flex items-center justify-center place-items-center bg-slate-100 px-6 py-24 sm:py-32 lg:px-8">
+      <div class="text-center">
+        <p class="text-base font-semibold text-indigo-600">
+          <img src="/img/EhsaniCorp_logo_black.svg" alt="" />
+        </p>
+        <h1
+          class="slogan mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          Innovate. Transform. Lead.
+        </h1>
+        <p class="mt-6 text-base leading-7 text-gray-600"></p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <span class="text-sm font-semibold text-gray-900"
+            >Hold on a bit more!</span
+          >
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector(".slogan");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      anime
+        .timeline({ loop: true })
+        .add({
+          targets: ".slogan .letter",
+          opacity: [0, 1],
+          easing: "easeInOutQuad",
+          duration: 2250,
+          delay: (el, i) => 150 * (i + 1),
+        })
+        .add({
+          targets: ".slogan",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 8000,
+        });
+    </script>
+  </body>
+</html>
